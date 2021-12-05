@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "baloo";
-  src: url("/fonts/baloo/baloo.woff") format("woff");
+  font-family: 'baloo';
+  src: url('/fonts/baloo/baloo.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -19,9 +19,8 @@
     rgba(118, 15, 181, 1) 35%,
     rgba(58, 13, 85, 1) 100%
   );
-  --font-body: -apple-system, "Segoe UI", Helvetica Neue, Helvetica,
-    Roboto, Arial, sans-serif, system-ui, "Apple Color Emoji",
-    "Segoe UI Emoji";
+  --font-body: -apple-system, 'Segoe UI', Helvetica Neue, Helvetica, Roboto,
+    Arial, sans-serif, system-ui, 'Apple Color Emoji', 'Segoe UI Emoji';
   --font-display: baloo, var(--font-body);
 }
 
@@ -166,8 +165,7 @@ h6 {
   box-shadow: 0 var(--shadow-size) 0 0 var(--shadow-color);
   outline-offset: 2px;
   transform: translateY(0);
-  transition: background-color 50ms ease-out, box-shadow
-      50ms ease-out,
+  transition: background-color 50ms ease-out, box-shadow 50ms ease-out,
     transform 100ms cubic-bezier(0.3, 0.6, 0.8, 1.25);
 }
 
@@ -175,23 +173,19 @@ h6 {
   --raise: 1px;
   color: var(--color-background);
   text-decoration: none;
-  box-shadow: 0 calc(var(--shadow-size) + var(--raise)) 0 0 var(
-      --shadow-color
-    );
+  box-shadow: 0 calc(var(--shadow-size) + var(--raise)) 0 0 var(--shadow-color);
   transform: translateY(calc(var(--raise) * -1));
 }
 
 .button:active {
   --press: 1px;
-  box-shadow: 0 calc(var(--shadow-size) - var(--press)) 0 0 var(
-      --shadow-color
-    );
+  box-shadow: 0 calc(var(--shadow-size) - var(--press)) 0 0 var(--shadow-color);
   transform: translateY(var(--press));
   background-color: var(--color-links-hover);
 }
 
 .button[disabled],
-.button[aria-disabled="true"] {
+.button[aria-disabled='true'] {
   transform: translateY(0);
   pointer-events: none;
   opacity: 0.7;
@@ -224,20 +218,20 @@ legend {
   white-space: normal;
 }
 
-[type="text"],
-[type="password"],
-[type="date"],
-[type="datetime"],
-[type="datetime-local"],
-[type="month"],
-[type="week"],
-[type="email"],
-[type="number"],
-[type="search"],
-[type="tel"],
-[type="time"],
-[type="url"],
-[type="color"],
+[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
 textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -263,40 +257,40 @@ textarea {
     background-color 50ms ease-out, color 50ms ease-out;
 }
 
-[data-light] [type="text"],
-[data-light] [type="password"],
-[data-light] [type="date"],
-[data-light] [type="datetime"],
-[data-light] [type="datetime-local"],
-[data-light] [type="month"],
-[data-light] [type="week"],
-[data-light] [type="email"],
-[data-light] [type="number"],
-[data-light] [type="search"],
-[data-light] [type="tel"],
-[data-light] [type="time"],
-[data-light] [type="url"],
-[data-light] [type="color"],
+[data-light] [type='text'],
+[data-light] [type='password'],
+[data-light] [type='date'],
+[data-light] [type='datetime'],
+[data-light] [type='datetime-local'],
+[data-light] [type='month'],
+[data-light] [type='week'],
+[data-light] [type='email'],
+[data-light] [type='number'],
+[data-light] [type='search'],
+[data-light] [type='tel'],
+[data-light] [type='time'],
+[data-light] [type='url'],
+[data-light] [type='color'],
 [data-light] textarea {
   color: var(--color-background);
   background-color: hsl(0 0% 0% / 10%);
 }
 
-[type="text"][aria-invalid="true"],
-[type="password"][aria-invalid="true"],
-[type="date"][aria-invalid="true"],
-[type="datetime"][aria-invalid="true"],
-[type="datetime-local"][aria-invalid="true"],
-[type="month"][aria-invalid="true"],
-[type="week"][aria-invalid="true"],
-[type="email"][aria-invalid="true"],
-[type="number"][aria-invalid="true"],
-[type="search"][aria-invalid="true"],
-[type="tel"][aria-invalid="true"],
-[type="time"][aria-invalid="true"],
-[type="url"][aria-invalid="true"],
-[type="color"][aria-invalid="true"],
-textarea[aria-invalid="true"] {
+[type='text'][aria-invalid='true'],
+[type='password'][aria-invalid='true'],
+[type='date'][aria-invalid='true'],
+[type='datetime'][aria-invalid='true'],
+[type='datetime-local'][aria-invalid='true'],
+[type='month'][aria-invalid='true'],
+[type='week'][aria-invalid='true'],
+[type='email'][aria-invalid='true'],
+[type='number'][aria-invalid='true'],
+[type='search'][aria-invalid='true'],
+[type='tel'][aria-invalid='true'],
+[type='time'][aria-invalid='true'],
+[type='url'][aria-invalid='true'],
+[type='color'][aria-invalid='true'],
+textarea[aria-invalid='true'] {
   border-color: var(--color-invalid);
 }
 
@@ -318,13 +312,13 @@ textarea[readonly] {
   cursor: not-allowed;
 }
 
-[type="file"],
-[type="checkbox"],
-[type="radio"] {
+[type='file'],
+[type='checkbox'],
+[type='radio'] {
   margin: 0;
 }
 
-[type="file"] {
+[type='file'] {
   width: 100%;
 }
 
@@ -332,13 +326,13 @@ label {
   margin: 0;
 }
 
-[type="checkbox"] + label,
-[type="radio"] + label {
+[type='checkbox'] + label,
+[type='radio'] + label {
   margin-left: 0.5rem;
 }
 
-label > [type="checkbox"],
-label > [type="radio"] {
+label > [type='checkbox'],
+label > [type='radio'] {
   margin-right: 0.5rem;
 }
 

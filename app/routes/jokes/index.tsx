@@ -1,6 +1,6 @@
-import { Joke } from "@prisma/client";
+import { Joke } from '@prisma/client'
 import { Link, LoaderFunction, useLoaderData } from 'remix'
-import { db } from "~/utils/db.server";
+import { db } from '~/utils/db.server'
 
 type LoaderData = { randomJoke: Joke }
 
@@ -22,9 +22,7 @@ export default function JokesIndexRoute() {
     <div>
       <p>Here's a random joke:</p>
       <p>{data.randomJoke.content}</p>
-      <Link to={data.randomJoke.id}>
-        "{data.randomJoke.name}" Permalink
-      </Link>
+      <Link to={data.randomJoke.id}>"{data.randomJoke.name}" Permalink</Link>
     </div>
-  );
+  )
 }

@@ -20,5 +20,5 @@ export default function NewJokeRoute() {
         </div>
       </form>
     </div>
-  );
+  )
 }

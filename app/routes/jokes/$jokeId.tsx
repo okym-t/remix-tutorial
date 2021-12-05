@@ -1,6 +1,6 @@
-import { Joke } from "@prisma/client";
-import { useLoaderData, LoaderFunction, Link } from "remix";
-import { db } from "~/utils/db.server";
+import { Joke } from '@prisma/client'
+import { useLoaderData, LoaderFunction, Link } from 'remix'
+import { db } from '~/utils/db.server'
 
 type LoaderData = { joke: Joke }
 
@@ -10,7 +10,7 @@ export const loader: LoaderFunction = async ({ params }) => {
   })
 
   if (!joke) {
-    throw new Error("Joke not found")
+    throw new Error('Joke not found')
   }
 
   const data: LoaderData = { joke }
@@ -26,5 +26,5 @@ export default function JokeRoute() {
       <p>{data.joke.content}</p>
       <Link to=".">{data.joke.name} Permalink</Link>
     </div>
-  );
+  )
 }
