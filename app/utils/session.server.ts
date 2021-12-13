@@ -34,6 +34,30 @@ let storage = createCookieSessionStorage({
   }
 })
 
+export function getUserSession(request: Request) {
+  return storage.getSession(request.headers.get('Cookie'))
+}
+
+export async function getUserId(request: Request) {
+  let session = await getUserSession(request)
+  let userId = session.get('userId')
+  if (!userId || typeof userId !== 'string') return null
+  return userId
+}
+
+export async function requireUserId(
+  request: Request,
+  redirectTo: string = new URL(request.url).pathname
+) {
+  let session = await getUserSession(request)
+  let userId = session.get('userId')
+  if (!userId || typeof userId !== 'string') {
+    let searchParams = new URLSearchParams([['redirectTo', redirectTo]])
+    throw redirect(`/login?${searchParams}`)
+  }
+  return userId
+}
+
 export async function createUserSession(userId: string, redirectTo: string) {
   let session = await storage.getSession()
   session.set('userId', userId)
