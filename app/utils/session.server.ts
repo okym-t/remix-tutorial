@@ -58,6 +58,31 @@ export async function requireUserId(
   return userId
 }
 
+export async function getUser(request: Request) {
+  let userId = await getUserId(request)
+  if (typeof userId !== 'string') {
+    return null
+  }
+
+  try {
+    let user = await db.user.findUnique({
+      where: { id: userId }
+    })
+    return user
+  } catch {
+    throw logout(request)
+  }
+}
+
+export async function logout(request: Request) {
+  let session = await storage.getSession(request.headers.get('Cookie'))
+  return redirect('/login', {
+    headers: {
+      'Set-Cookie': await storage.destroySession(session)
+    }
+  })
+}
+
 export async function createUserSession(userId: string, redirectTo: string) {
   let session = await storage.getSession()
   session.set('userId', userId)
